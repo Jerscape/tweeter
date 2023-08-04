@@ -3,6 +3,9 @@
 const userHelper    = require("../lib/util/user-helper")
 
 const express       = require('express');
+
+//JN this creates a new router object
+//route objects handle rquests
 const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
