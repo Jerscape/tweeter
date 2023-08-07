@@ -17,10 +17,13 @@ html {
  */
 
 body {
+  /* display: flex;
+  justify-content: center; */
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
+
 }
 
 /* nav {
@@ -33,5 +36,16 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ .mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+  background-color: #f4f1ec;
+  margin: 0 auto;
+  
+ }
 
  

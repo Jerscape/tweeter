@@ -19,7 +19,10 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
 
     <!-- Header css-->
-    <link rel="stylesheet" href="/style/header.css" type="text/css">
+    <link rel="stylesheet" href="/styles/header.css" type="text/css">
+
+    <!--new tweet-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
 
     <!-- font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,6 +32,10 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Char count js-->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
@@ -53,6 +60,27 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="mainContainer">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form class="tweetForm" action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="btndiv">
+            <button class="button" type="submit">Tweet</button>
+            <output id="output" name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    <div>
+      
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor arcu ac turpis malesuada, et malesuada ex auctor.
+      Aenean metus lectus, euismod vel facilisis ac, pretium vestibulum ex. Curabitur metus tellus, eleifend eu arcu in, 
+      rutrum imperdiet ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula egestas metus ut 
+      placerat. Aliquam ultricies posuere tristique. Duis quis felis vehicula, suscipit nulla cursus, pretium dolor. 
+      Quisque id magna nec magna iaculis gravida.
+      
+      </div>
+    </main>
   </body>
 </html>

@@ -1,13 +1,17 @@
-header {
+/* header {
   height: 520px; 
   padding-top: 120px;
-  margin: 120px;
+  /* margin: 120px; 
   background-color: blueviolet;
-} 
+}  */
 
 .headerContainer {
   display: flex;
-  padding-top: 120px;
-  margin: 120px;
-  background-color: blueviolet;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 140px;
+  /* margin: 120px; */
+  background-color: lightskyblue;
+  background-image: url("/images/arabesque.png");
 }
