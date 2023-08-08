@@ -24,6 +24,9 @@
     <!--new tweet-->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
 
+    <!-- tweets -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css">
+
     <!-- font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -74,9 +77,31 @@
       </section>
       <!--tweet container-->
       <article class="tweetArticleContainer">
-        <header class="tweetHeader"><i class="fa-solid fa-user"></i><h3>Jeeves</h3></header>
-        This is where the tweets will go
-        <footer><h5>10 days ago</><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></footer>
+        <header>
+          <div id="userInfo">
+            <i class="fa-solid fa-user"></i>
+            <!-- <p id="name">Jeeves</p> -->
+            <h2>Jeeves</h2>
+          </div>
+          <div>
+            <!-- <p>@jeevesthecat</p> -->
+            <h3>@jeevesthecat</h3>
+          <div>
+          </header>
+
+        <div class="tweetContent">
+          <p id="tweet">There is no such thing as too much cat food. #freethekibble</p>
+        </div>
+  
+        <footer>
+          <!-- <p>10 days ago</p> -->
+          <div>10 days ago</div>
+          <div>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        </footer><!--article footer-->
       </article>
     </main>
   </body>
