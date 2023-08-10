@@ -30,6 +30,9 @@
     <!-- font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- timeago-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -38,6 +41,10 @@
 
     <!-- Char count js-->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- new tweet-->
+    <script type="text/javascript" src="/scripts/newTweet.js"></script>
+
 
   </head>
 
@@ -66,43 +73,17 @@
     <main class="mainContainer">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form class="tweetForm" action="/tweets" method="POST">
+        <!-- NEW TWEET FORM-->
+        <form class="tweetForm" id="tweetForm">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" ></textarea>
           <div id="btndiv">
-            <button class="button" type="submit">Tweet</button>
+            <button class="button" type="submit" id="newTweet">Tweet</button>
             <output id="output" name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <!--tweet container-->
-      <!-- <article class="tweetArticleContainer">
-        <header>
-          <div id="userInfo">
-            <i class="fa-solid fa-user"></i>
-         
-            <h2>Jeeves</h2>
-          </div>
-          <div>
-          
-            <h3>@jeevesthecat</h3>
-          <div>
-          </header>
-
-        <div class="tweetContent">
-          <p id="tweet">There is no such thing as too much cat food. #freethekibble</p>
-        </div>
-  
-        <footer>
-          
-          <div>10 days ago</div>
-          <div>
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-        </footer>
-      </article> -->
+      <!-- new tweets will go here-->
     </main>
   </body>
 </html>

@@ -7,30 +7,30 @@
 $(document).ready(() => {
 
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ]
 
 //render tweet
 const renderTweet = function (arrayOfTweets) {
@@ -65,7 +65,7 @@ const createTweetElement = function(tweetObject){
     </div>
 
     <footer>
-      <div>${tweetObject.created_at}</div>
+      <div>${timeago.format(tweetObject.created_at)}</div>
       <div>
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -81,8 +81,23 @@ const createTweetElement = function(tweetObject){
 
 //call render
 
-renderTweet(data)
+//renderTweet(data)
 
+//load tweets
+
+const loadTweets = function() {
+
+  $.ajax({
+    url: '/tweets',
+    success: (tweets) => {
+      renderTweet(tweets)
+    },
+    error: (err) =>  { console.log(err)}
+  })
+
+}
+
+loadTweets()
 
 })//end document ready
 
