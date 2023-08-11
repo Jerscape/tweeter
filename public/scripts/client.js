@@ -38,6 +38,7 @@ const renderTweet = function (arrayOfTweets) {
   for(let tweet of arrayOfTweets){
 
     let $tweet = createTweetElement(tweet)
+    //change to go into tweet list section
     $(".mainContainer").append($tweet)
     
   }
@@ -91,11 +92,53 @@ const loadTweets = function() {
     url: '/tweets',
     success: (tweets) => {
       renderTweet(tweets)
+      //console.log(tweets)
     },
     error: (err) =>  { console.log(err)}
   })
 
 }
+
+
+$(function() {
+  const $form = $('#tweetForm')
+  $form.on('submit', function(event) {
+    console.log("Button clicked")
+    event.preventDefault()
+
+    // to get the data from the form....is it the name.text? or do I use ID
+    //the jquery documentation suggested I serialized the whole form???
+
+    let userInput = $('#tweet-text').val().trim()
+
+    if(userInput !== "" && userInput !== null){
+      if(userInput.length <= 140){
+        //place post request here
+        userInput = $(this).serialize()
+        console.log(userInput)
+
+        $.post('/tweets', userInput)
+        .then(()=>{
+          console.log("tweet submitted")
+          //clear form
+          $('#tweet-text').val("")
+          loadTweets()
+
+          //
+          // $("mainContainer").load('index.html')
+          // $("index.html").load(".mainContainer")
+
+        })
+
+      } else {
+        alert("your input is too long")
+      }
+    } else {
+      alert("please enter some text")
+    }
+    
+  })
+})
 
 loadTweets()
 

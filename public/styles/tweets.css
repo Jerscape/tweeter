@@ -20,6 +20,12 @@
   
 }
 
+#tweetList {
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+
 #userInfo {
   display: flex;
   justify-content: flex-start;
