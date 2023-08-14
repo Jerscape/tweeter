@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape1 = function (str) {
+  const $element = $('div').text(str)
+  return $element.val();
+};
+
+
 $(document).ready(() => {
 
 
@@ -33,6 +39,13 @@ $(document).ready(() => {
 // ]
 
 //render tweet
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweet = function (arrayOfTweets) {
 
   for(let tweet of arrayOfTweets){
@@ -45,38 +58,51 @@ const renderTweet = function (arrayOfTweets) {
 
 } //end render tweet
 
+
+
 //createTweetElement
 const createTweetElement = function(tweetObject){
+    //this is not working, I am missing something 
+    //the instructions for this functoin say to return an element, I don't understand how to do that/I keep getting errors
+    // $userName = $('<h2>').text(tweetObject.user.name)
+    // const $userInfo = $('<div>')
+    // $userInfo.append($userName)
 
-  const aTweet = `
-  
+  //here is it all one variable, I don't understand how the above works
+  //how I am supposed to return it!?
+  //does the running of the function just insert it/sort of 
+
+  // const $escapedTweet = tweetObject.content.text.text()
+//   // console.log($escapedTweet)
+
+  const $aTweet = $(` 
+
   <article class="tweetArticleContainer">
-    <header>
-      <div id="userInfo">
-        <img src="${tweetObject.user.avatars}"/>
-        <h2>${tweetObject.user.name}</h2>
-      </div>
-      <div>
-        <h3>${tweetObject.user.handle}</h3>
-      <div>
-    </header>
-
-    <div class="tweetContent">
-      <p id="tweet">${tweetObject.content.text}</p>
+  <header>
+    <div id="userInfo">
+      <img src="${tweetObject.user.avatars}"/>
+      <h2>${tweetObject.user.name}</h2>
     </div>
+    <div>
+      <h3>${tweetObject.user.handle}</h3>
+    <div>
+  </header>
 
-    <footer>
-      <div>${timeago.format(tweetObject.created_at)}</div>
-      <div>
-      <i class="fa-solid fa-flag"></i>
-      <i class="fa-solid fa-retweet"></i>
-      <i class="fa-solid fa-heart"></i>
-    </div>
-    </footer><!--article footer-->
-  </article>
-  
-  `
-  return aTweet
+  <div class="tweetContent">
+    <p id="tweet">${escape(tweetObject.content.text)}</p>
+  </div>
+
+  <footer>
+    <div>${timeago.format(tweetObject.created_at)}</div>
+    <div>
+    <i class="fa-solid fa-flag"></i>
+    <i class="fa-solid fa-retweet"></i>
+    <i class="fa-solid fa-heart"></i>
+  </div>
+  </footer><!--article footer-->
+</article>
+  `)
+  return $aTweet
 }
 
 
@@ -102,12 +128,16 @@ const loadTweets = function() {
 
 $(function() {
   const $form = $('#tweetForm')
+  
+
+
   $form.on('submit', function(event) {
     console.log("Button clicked")
     event.preventDefault()
 
     // to get the data from the form....is it the name.text? or do I use ID
     //the jquery documentation suggested I serialized the whole form???
+
 
     let userInput = $('#tweet-text').val().trim()
 
