@@ -52,4 +52,17 @@ textarea {
   
  }
 
- 
+ .error-container {
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
+  color: orangered;
+  padding-bottom: 10px;
+  padding-left: 75px;
+  padding-right: 75px;
+  border: 3px;
+  border-color: orangered;
+  
+ }

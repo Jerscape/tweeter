@@ -4,42 +4,32 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape1 = function (str) {
-  const $element = $('div').text(str)
-  return $element.val();
-};
+
 
 
 $(document).ready(() => {
 
+//TWEET CHARACTER COUNTER
+$('#tweet-text').on('input', function(event) {
+  console.log(this)//for testing purposes
+  console.log(event.target.value);
+  //const count = event.target.value.trim().length;
+  let tweetCharCount = $(this).val().length;
+  const remaining = 140-tweetCharCount 
+  $("#output").text(remaining)
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+  if(remaining >= 0){
+    $("#output").css("color", "black")
+  } else {
+    $("#output").css("color", "red")
+  }
 
-//render tweet
+  $(".classname")
 
+});
+
+
+//RENDER TWEET FUNCTION
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -52,7 +42,9 @@ const renderTweet = function (arrayOfTweets) {
 
     let $tweet = createTweetElement(tweet)
     //change to go into tweet list section
+    $('.error-container').hide()
     $(".mainContainer").append($tweet)
+    $("#output").text('140')
     
   }
 
@@ -62,18 +54,6 @@ const renderTweet = function (arrayOfTweets) {
 
 //createTweetElement
 const createTweetElement = function(tweetObject){
-    //this is not working, I am missing something 
-    //the instructions for this functoin say to return an element, I don't understand how to do that/I keep getting errors
-    // $userName = $('<h2>').text(tweetObject.user.name)
-    // const $userInfo = $('<div>')
-    // $userInfo.append($userName)
-
-  //here is it all one variable, I don't understand how the above works
-  //how I am supposed to return it!?
-  //does the running of the function just insert it/sort of 
-
-  // const $escapedTweet = tweetObject.content.text.text()
-//   // console.log($escapedTweet)
 
   const $aTweet = $(` 
 
@@ -142,6 +122,8 @@ $(function() {
     let userInput = $('#tweet-text').val().trim()
 
     if(userInput !== "" && userInput !== null){
+      
+      //wrap the below in the agove?
       if(userInput.length <= 140){
         //place post request here
         userInput = $(this).serialize()
@@ -161,10 +143,21 @@ $(function() {
         })
 
       } else {
-        alert("your input is too long")
-      }
+  
+        $('.error-container').slideDown()
+        $(".error-container").html('<i class="fa-solid fa-circle-exclamation"></i>That tweet is too long')
+        // setTimeout(()=>{
+        //   $('.error-container').hide()
+        // },15000)
+        
+       }
     } else {
-      alert("please enter some text")
+      $('.error-container').slideDown()
+      $(".error-container").html('<i class="fa-solid fa-circle-exclamation"></i>Please enter some text')
+      // setTimeout(()=>{
+      //   $('.error-container').hide()
+      // },3000)
+      //alert("please enter some text")
     }
     
   })
