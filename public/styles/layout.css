@@ -28,6 +28,8 @@ body {
 
 textarea {
   font-family: "Source Sans 3", sans-serif;
+  border-bottom: 2px;
+  background-color: lightgrey;
 }
 
 /* nav {
@@ -54,14 +56,15 @@ textarea {
 
  .error-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
   color: orangered;
-  padding-bottom: 10px;
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 125px;
+  padding-right: 125px;
   border: 3px;
   border-color: orangered;
   
