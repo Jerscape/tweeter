@@ -27,14 +27,26 @@ nav {
 .container{
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center
+  
  
   
  }
 
 .container p {
   margin: 0px;
+}
+
+i{
+  align-content: center;
+  align-items: center;
+  
+}
+#arrowIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 

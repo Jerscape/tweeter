@@ -10,20 +10,12 @@
   box-sizing: inherit;
 }
 
-.navClass {
+/* .navClass {
   display: flex;
   justify-content: center;
-}
+} */
 
-i{
-  align-content: center;
-  align-items: center;
-}
-#arrowIcon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 /*
  * Global layout stuff
  */
