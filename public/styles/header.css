@@ -10,8 +10,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 140px;
+  padding-top: 120px;
   /* margin: 120px; */
-  background-color: lightskyblue;
-  background-image: url("/images/arabesque.png");
+  background-color: goldenrod;
+  width: 100%;
+  
+}
+
+/* #name{
+  width: 100%;
+  align-content: center;
+} */
+
+
+
+@media only screen and (min-width: 1024px){
+
+  .headerContainer {
+    margin-top: 140px;
+    height: 25%;
+    width: 33%;
+    margin-left: 25px;
+    background-color: goldenrod;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+  }  
+
 }

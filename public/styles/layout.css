@@ -68,6 +68,7 @@ textarea {
   
  }
 
+
  .error-container {
   display: flex;
   justify-content: space-evenly;
@@ -91,12 +92,13 @@ textarea {
     justify-content: space-between;
   }
 
-  .headerContainer {
+  /* .headerContainer {
     margin-top: 140px;
     height: 500px;
     width: 25%;
     margin-left: 25px;
-  }  
+    background-color: #4056A1;
+  }   */
 
   article {
     margin-top: 120px;
@@ -106,6 +108,7 @@ textarea {
   .mainContainer {
     margin-top: 120px;
     margin-right: 25px;
-    width: 75%;
+    width: 66%;
+    
   }
  }
