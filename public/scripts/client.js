@@ -1,30 +1,21 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
 
 
 $(document).ready(() => {
 
 //TWEET CHARACTER COUNTER
 $('#tweet-text').on('input', function(event) {
-  console.log(this)//for testing purposes
-  console.log(event.target.value);
-  //const count = event.target.value.trim().length;
+
   let tweetCharCount = $(this).val().length;
-  const remaining = 140-tweetCharCount 
-  $("#output").text(remaining)
+  const remaining = 140-tweetCharCount ;
+  $("#output").text(remaining);
 
   if(remaining >= 0){
-    $("#output").css("color", "black")
+    $("#output").css("color", "black");
   } else {
-    $("#output").css("color", "red")
+    $("#output").css("color", "red");
   }
 
-  $(".classname")
+  $(".classname");
 
 });
 
@@ -42,18 +33,16 @@ const renderTweet = function (arrayOfTweets) {
 
     let $tweet = createTweetElement(tweet)
     
-    //set up to hide on keybpress (line 109) verifying requirement and then remove one of them
-    $('.error-container').hide()
-    $("#tweetList").append($tweet)
-    $("#output").text('140')
+    $('.error-container').hide();
+    $("#tweetList").append($tweet);
+    $("#output").text('140');
     
   }
 
-} //end render tweet
+} 
 
 
-
-//createTweetElement
+//CREATE TWEET ELEMENT FUNCTION
 const createTweetElement = function(tweetObject){
 
   const $aTweet = $(` 
@@ -87,63 +76,50 @@ const createTweetElement = function(tweetObject){
 }
 
 
-//call render
-
-//renderTweet(data)
-
-//load tweets
-
+//LOAD TWEETS FUNCTION
 const loadTweets = function() {
 
   $.ajax({
     url: '/tweets',
     success: (tweets) => {
       renderTweet(tweets)
-      //console.log(tweets)
+      
     },
     error: (err) =>  { console.log(err)}
   })
 
 }
 
-//make error container hid when keybpressed in text area
+//slides error container out of view upon key press
 $( "textarea" ).on( "keypress", function(){
   $('.error-container').hide()
 })
 
+//NEW TWEET FUNCTION
 $(function() {
   const $form = $('#tweetForm')
   
-
 
   $form.on('submit', function(event) {
     console.log("Button clicked")
     event.preventDefault()
 
-    // to get the data from the form....is it the name.text? or do I use ID
-    //the jquery documentation suggested I serialized the whole form???
-
-
     let userInput = $('#tweet-text').val().trim()
 
     if(userInput !== "" && userInput !== null){
       
-      //wrap the below in the agove?
       if(userInput.length <= 140){
-        //place post request here
+       
         userInput = $(this).serialize()
         console.log(userInput)
 
         $.post('/tweets', userInput)
         .then(()=>{
           console.log("tweet submitted")
+          
           //clear form
           $('#tweet-text').val("")
           loadTweets()
-
-          //
-          // $("mainContainer").load('index.html')
-          // $("index.html").load(".mainContainer")
 
         })
 
@@ -151,26 +127,22 @@ $(function() {
   
         $('.error-container').slideDown()
         $(".error-container").html('<i class="fa-solid fa-circle-exclamation"></i>That tweet is too long')
-        // setTimeout(()=>{
-        //   $('.error-container').hide()
-        // },15000)
+    
         
        }
     } else {
       $('.error-container').slideDown()
       $(".error-container").html('<i class="fa-solid fa-circle-exclamation"></i>Please enter some text')
-      // setTimeout(()=>{
-      //   $('.error-container').hide()
-      // },3000)
-      //alert("please enter some text")
+
     }
     
   })
 })
 
+//CALL LOAD TWEETS
 loadTweets()
 
-})//end document ready
+})
 
 
 
