@@ -18,7 +18,7 @@ This repository is the starter code for the project: Students will fork and clon
 !["Desktop view"](imgs/tweeter1.png)
 !["Mobile view"](imgs/tweeter2.png)
 !["New tweet"](imgs/tweeter3.png)
-!["New tweet"](https://github.com/Jerscape/tweeter/blob/master/imgs/tweeter4.png)
+!["New tweet"](imgs/tweeter4.png)
 
 
 ## Dependencies
