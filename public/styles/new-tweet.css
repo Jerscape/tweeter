@@ -14,9 +14,20 @@
   width: 100%;
   font-size: 25px;
   font-family: "Bungee", sans-serif;
-  padding: 5px;
+  padding: 10px;
+  border: 5px solid darkgray;
   
 }
+
+textarea {
+  font-family: "Source Sans 3", sans-serif;
+  border-bottom: 2px solid black; 
+  border-top: 0px; 
+  border-left: 0px; 
+  border-right: 0px; 
+  background-color: lightgrey;
+}
+
 
 #btndiv{
   display: flex;
@@ -26,8 +37,6 @@
 
 .button {
   background-color: #4056A1;;
-  border: 10px;
-  border-radius: 5px;
   color: white;
   padding: 5px;
   text-align: center;

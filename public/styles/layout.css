@@ -32,12 +32,6 @@ body {
 
 
 
-textarea {
-  font-family: "Source Sans 3", sans-serif;
-  border-bottom: 2px;
-  background-color: lightgrey;
-}
-
 /* nav {
   font-family: "Bungee", sans-serif;
   font-size: 400px;
@@ -50,6 +44,7 @@ textarea {
 
  .mainContainer {
   display: flex;
+  /* you need to make it column reverse, but first you have to either put the tweets*/
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -72,8 +67,7 @@ textarea {
   padding-top: 20px;
   padding-left: 125px;
   padding-right: 125px;
-  border: 3px;
-  border-color: orangered;
+  border: 5px solid orangered;
   
  }
  

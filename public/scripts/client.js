@@ -41,9 +41,10 @@ const renderTweet = function (arrayOfTweets) {
   for(let tweet of arrayOfTweets){
 
     let $tweet = createTweetElement(tweet)
-    //change to go into tweet list section
+    
+    //set up to hide on keybpress (line 109) verifying requirement and then remove one of them
     $('.error-container').hide()
-    $(".mainContainer").append($tweet)
+    $("#tweetList").append($tweet)
     $("#output").text('140')
     
   }
@@ -105,6 +106,10 @@ const loadTweets = function() {
 
 }
 
+//make error container hid when keybpressed in text area
+$( "textarea" ).on( "keypress", function(){
+  $('.error-container').hide()
+})
 
 $(function() {
   const $form = $('#tweetForm')

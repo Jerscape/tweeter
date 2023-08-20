@@ -4,7 +4,7 @@
   width: 75%;
   background-color: lightgrey;
   border: 5px solid darkgray;
-  padding: 5px;
+  padding: 10px;
 }
 
 .tweetArticleContainer:hover {
@@ -14,6 +14,7 @@
 
 .tweetArticleContainer header {
   display: flex;
+  /* flex-direction: column-reverse; */
   justify-content: space-between;
   padding: 15px;
   
@@ -23,6 +24,9 @@
 #tweetList {
   display: flex;
   flex-direction: column-reverse;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
 }
 
