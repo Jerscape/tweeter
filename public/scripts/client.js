@@ -2,22 +2,6 @@
 
 $(document).ready(() => {
 
-//TWEET CHARACTER COUNTER
-$('#tweet-text').on('input', function(event) {
-
-  let tweetCharCount = $(this).val().length;
-  const remaining = 140-tweetCharCount ;
-  $("#output").text(remaining);
-
-  if(remaining >= 0){
-    $("#output").css("color", "black");
-  } else {
-    $("#output").css("color", "red");
-  }
-
-  $(".classname");
-
-});
 
 
 //RENDER TWEET FUNCTION
@@ -33,7 +17,7 @@ const renderTweet = function (arrayOfTweets) {
 
     let $tweet = createTweetElement(tweet)
     
-    $('.error-container').hide();
+    $('.error-container').hide(); //this line
     $("#tweetList").append($tweet);
     $("#output").text('140');
     
@@ -90,10 +74,6 @@ const loadTweets = function() {
 
 }
 
-//slides error container out of view upon key press
-$( "textarea" ).on( "keypress", function(){
-  $('.error-container').hide()
-})
 
 //NEW TWEET FUNCTION
 $(function() {
@@ -119,7 +99,8 @@ $(function() {
           
           //clear form
           $('#tweet-text').val("")
-          loadTweets()
+          $("#tweetList").empty(); //does this solve it?
+          loadTweets()//is this line causing the problem?
 
         })
 
